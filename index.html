@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CRM</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Управление факультетами, группами и аудиториями</h1>
+
+		<div id="modal" class="modal">
+			<div class="modal-content">
+				<span class="close" id="closeBtn">&times;</span>
+				<p id="modalMessage"></p>
+			</div>
+		</div>
+		
+		<!-- Факультеты -->
+		<div class="section">
+			<div class="form-group">
+				<label for="facultyName">Название факультета</label>
+				<input type="text" id="facultyName">
+				<div class="button-group">
+					<button id="addFaculty">Добавить факультет</button>
+					<button id="removeFaculty">Удалить факультет</button>
+				</div>
+			</div>
+			<div class="faculty-list">
+				<h2>Список факультетов</h2>
+				<ul id="facultyList"></ul>
+			</div>
+		</div>
+
+		<!-- Группы -->
+		<div class="section">
+			<div class="form-group">
+				<label for="groupName">Название группы</label>
+				<input type="text" id="groupName">
+				<label for="groupSize">Количество студентов</label>
+				<input type="number" id="groupSize" min="1">
+				<label for="groupFaculty">Факультет группы</label>
+				<input type="text" id="groupFaculty">
+				<div class="button-group">
+					<button id="addGroup">Добавить группу</button>
+					<button id="removeGroup">Удалить группу</button>
+				</div>
+			</div>
+			<div class="group-list">
+				<h2>Список групп</h2>
+				<ul id="groupList"></ul>
+			</div>
+		</div>
+
+		<!-- Аудитории -->
+		<div class="section">
+			<div class="form-group">
+				<label for="auditoryName">Название аудитории</label>
+				<input type="text" id="auditoryName">
+				<label for="auditorySize">Количество мест</label>
+				<input type="number" id="auditorySize" min="10" max="20">
+				<label for="auditoryFaculty">Факультет аудитории</label>
+				<input type="text" id="auditoryFaculty">
+				<div class="button-group">
+					<button id="addAuditory">Добавить аудиторию</button>
+					<button id="removeAuditory">Удалить аудиторию</button>
+				</div>
+			</div>
+			<div class="auditory-list">
+				<h2>Список аудиторий</h2>
+				<ul id="auditoryList"></ul>
+			</div>
+
+			<!-- Фильтры -->
+
+			<div class="form-group">
+				<label for="filterFaculty">Факультет для фильтрации аудиторий</label>
+				<input type="text" id="filterFaculty">
+				<button id="viewAuditoriesByFaculty">Показать аудитории по факультету</button>
+				<label for="filterGroup">Группа для фильтрации аудиторий</label>
+				<input type="text" id="filterGroup">
+				<button id="viewAuditoriesForGroup">Показать аудитории для группы</button>
+				<button id="sortAuditoriesBySize">Сортировать аудитории по количеству мест</button>
+				<button id="sortAuditoriesByName">Сортировать аудитории по названию</button>
+				<button id="resetFilters">Сбросить фильтры</button>
+			</div>
+		</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
